@@ -1,0 +1,715 @@
+root@31d5143ebe2c:/data/resnet-test# python main.py
+6 class found in data
+class idx:0 dir:data/class_1 img cnt:150
+class idx:1 dir:data/class_2 img cnt:173
+class idx:2 dir:data/class_3 img cnt:179
+class idx:3 dir:data/class_4 img cnt:249
+class idx:4 dir:data/class_5 img cnt:209
+class idx:5 dir:data/class_6 img cnt:219
+augmentation x 1
+img size: 1179
+data size: 1179
+ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=2048, out_features=6, bias=True)
+)
+^CTraceback (most recent call last):
+  File "main.py", line 86, in <module>
+    main()
+  File "main.py", line 47, in main
+    model = model.to(device)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 673, in to
+    return self._apply(convert)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 409, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 671, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+KeyboardInterrupt
+
+root@31d5143ebe2c:/data/resnet-test# vim main.py
+root@31d5143ebe2c:/data/resnet-test# python main.py
+6 class found in data
+class idx:0 dir:data/class_1 img cnt:150
+class idx:1 dir:data/class_2 img cnt:173
+class idx:2 dir:data/class_3 img cnt:179
+class idx:3 dir:data/class_4 img cnt:249
+class idx:4 dir:data/class_5 img cnt:209
+class idx:5 dir:data/class_6 img cnt:219
+augmentation x 1
+img size: 1179
+data size: 1179
+ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=2048, out_features=6, bias=True)
+)
+Params to learn:
+         fc.weight
+         fc.bias
+Epoch: [0]  [  0/118]  eta: 0:03:27  lr: 0.001  img/s: 20.392785493194086  loss: 1.8706 (1.8706)  acc1: 12.5000 (12.5000)  acc5: 87.5000 (87.5000)  time: 1.7569  data: 1.3646  max mem: 174
+Epoch: [0]  [ 10/118]  eta: 0:02:37  lr: 0.001  img/s: 535.8677675391667  loss: 1.8152 (1.8025)  acc1: 25.0000 (19.3182)  acc5: 87.5000 (86.3636)  time: 1.4617  data: 1.4107  max mem: 174
+Epoch: [0]  [ 20/118]  eta: 0:02:21  lr: 0.001  img/s: 512.1719327166712  loss: 1.7611 (1.7817)  acc1: 25.0000 (22.0238)  acc5: 100.0000 (90.4762)  time: 1.4261  data: 1.4093  max mem: 174
+Epoch: [0]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 486.4089064130813  loss: 1.7068 (1.7729)  acc1: 25.0000 (22.1774)  acc5: 100.0000 (89.5161)  time: 1.3387  data: 1.3223  max mem: 174
+Epoch: [0]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 452.8874611958429  loss: 1.6750 (1.7375)  acc1: 37.5000 (27.1341)  acc5: 87.5000 (89.9390)  time: 1.3311  data: 1.3146  max mem: 174
+Epoch: [0]  [ 50/118]  eta: 0:01:34  lr: 0.001  img/s: 505.4444009279065  loss: 1.6110 (1.7052)  acc1: 37.5000 (29.9020)  acc5: 87.5000 (90.6863)  time: 1.3967  data: 1.3798  max mem: 174
+Epoch: [0]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 513.2766126688388  loss: 1.3833 (1.6549)  acc1: 50.0000 (35.0410)  acc5: 100.0000 (90.9836)  time: 1.3876  data: 1.3707  max mem: 174
+Epoch: [0]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 573.021705346927  loss: 1.3426 (1.6207)  acc1: 62.5000 (38.5563)  acc5: 100.0000 (91.7254)  time: 1.3806  data: 1.3636  max mem: 174
+Epoch: [0]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 517.9751775239272  loss: 1.3395 (1.5816)  acc1: 62.5000 (40.5864)  acc5: 100.0000 (92.5926)  time: 1.3801  data: 1.3635  max mem: 174
+Epoch: [0]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 551.2293336837955  loss: 1.3112 (1.5624)  acc1: 50.0000 (41.4835)  acc5: 100.0000 (92.9945)  time: 1.3844  data: 1.3681  max mem: 174
+Epoch: [0]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 520.2963514288815  loss: 1.3087 (1.5247)  acc1: 50.0000 (43.5644)  acc5: 100.0000 (93.4406)  time: 1.3857  data: 1.3687  max mem: 174
+Epoch: [0]  [110/118]  eta: 0:00:11  lr: 0.001  img/s: 507.14031799770265  loss: 1.1860 (1.4919)  acc1: 50.0000 (45.1577)  acc5: 100.0000 (94.0315)  time: 1.3534  data: 1.3361  max mem: 174
+Epoch: [0] Total time: 0:02:43
+Test:  [ 0/30]  eta: 0:00:40  loss: 1.0293 (1.0293)  acc1: 62.5000 (62.5000)  acc5: 100.0000 (100.0000)  time: 1.3648  data: 1.3509  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 74.043 Acc@5 98.298
+Epoch: [1]  [  0/118]  eta: 0:02:40  lr: 0.001  img/s: 488.02187445459305  loss: 0.8433 (0.8433)  acc1: 75.0000 (75.0000)  acc5: 100.0000 (100.0000)  time: 1.3604  data: 1.3440  max mem: 174
+Epoch: [1]  [ 10/118]  eta: 0:02:30  lr: 0.001  img/s: 510.50438169425513  loss: 0.9010 (0.9701)  acc1: 75.0000 (69.3182)  acc5: 100.0000 (98.8636)  time: 1.3945  data: 1.3778  max mem: 174
+Epoch: [1]  [ 20/118]  eta: 0:02:17  lr: 0.001  img/s: 509.4038560801579  loss: 0.8915 (0.9503)  acc1: 75.0000 (74.4048)  acc5: 100.0000 (99.4048)  time: 1.4047  data: 1.3881  max mem: 174
+Epoch: [1]  [ 30/118]  eta: 0:02:03  lr: 0.001  img/s: 497.5892279858825  loss: 0.8864 (0.9625)  acc1: 75.0000 (72.9839)  acc5: 100.0000 (99.5968)  time: 1.4098  data: 1.3935  max mem: 174
+Epoch: [1]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 487.5680325486777  loss: 0.9834 (0.9697)  acc1: 75.0000 (72.8659)  acc5: 100.0000 (99.6951)  time: 1.3918  data: 1.3754  max mem: 174
+Epoch: [1]  [ 50/118]  eta: 0:01:35  lr: 0.001  img/s: 483.5977805001081  loss: 0.9865 (0.9803)  acc1: 75.0000 (72.0588)  acc5: 100.0000 (99.5098)  time: 1.3892  data: 1.3724  max mem: 174
+Epoch: [1]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 502.507443016743  loss: 0.8855 (0.9510)  acc1: 75.0000 (73.3607)  acc5: 100.0000 (99.5902)  time: 1.3673  data: 1.3511  max mem: 174
+Epoch: [1]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 345.8863209978353  loss: 0.7865 (0.9401)  acc1: 75.0000 (73.7676)  acc5: 100.0000 (99.4718)  time: 1.3441  data: 1.3276  max mem: 174
+Epoch: [1]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 513.5279839610658  loss: 0.8027 (0.9285)  acc1: 75.0000 (73.7654)  acc5: 100.0000 (99.5370)  time: 1.3653  data: 1.3483  max mem: 174
+Epoch: [1]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 502.808643270297  loss: 0.8270 (0.9298)  acc1: 75.0000 (73.4890)  acc5: 100.0000 (99.5879)  time: 1.3766  data: 1.3588  max mem: 174
+Epoch: [1]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 471.9794072552853  loss: 0.8270 (0.9167)  acc1: 75.0000 (74.0099)  acc5: 100.0000 (99.5050)  time: 1.3816  data: 1.3638  max mem: 174
+Epoch: [1]  [110/118]  eta: 0:00:11  lr: 0.001  img/s: 499.0619766490667  loss: 0.7486 (0.9038)  acc1: 75.0000 (74.6622)  acc5: 100.0000 (99.5495)  time: 1.3897  data: 1.3727  max mem: 174
+Epoch: [1] Total time: 0:02:43
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.5971 (0.5971)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3795  data: 1.3660  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 84.255 Acc@5 99.149
+Epoch: [2]  [  0/118]  eta: 0:02:45  lr: 0.001  img/s: 466.28634955045095  loss: 0.4893 (0.4893)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.4053  data: 1.3882  max mem: 174
+Epoch: [2]  [ 10/118]  eta: 0:02:30  lr: 0.001  img/s: 508.89395777723854  loss: 0.6196 (0.6884)  acc1: 87.5000 (81.8182)  acc5: 100.0000 (98.8636)  time: 1.3956  data: 1.3791  max mem: 174
+Epoch: [2]  [ 20/118]  eta: 0:02:16  lr: 0.001  img/s: 434.2884951399764  loss: 0.6196 (0.6955)  acc1: 87.5000 (83.3333)  acc5: 100.0000 (99.4048)  time: 1.3928  data: 1.3760  max mem: 174
+Epoch: [2]  [ 30/118]  eta: 0:02:00  lr: 0.001  img/s: 501.8235549241008  loss: 0.6110 (0.7109)  acc1: 87.5000 (83.0645)  acc5: 100.0000 (99.5968)  time: 1.3567  data: 1.3394  max mem: 174
+Epoch: [2]  [ 40/118]  eta: 0:01:45  lr: 0.001  img/s: 505.68053650817575  loss: 0.7595 (0.7258)  acc1: 75.0000 (82.0122)  acc5: 100.0000 (99.6951)  time: 1.3164  data: 1.2998  max mem: 174
+Epoch: [2]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 495.1660468685438  loss: 0.7884 (0.7496)  acc1: 75.0000 (81.6176)  acc5: 100.0000 (99.5098)  time: 1.3458  data: 1.3298  max mem: 174
+Epoch: [2]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 506.38262680530613  loss: 0.6748 (0.7245)  acc1: 87.5000 (82.9918)  acc5: 100.0000 (99.5902)  time: 1.3797  data: 1.3634  max mem: 174
+Epoch: [2]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 481.1982045288322  loss: 0.5874 (0.7167)  acc1: 87.5000 (82.7465)  acc5: 100.0000 (99.6479)  time: 1.3722  data: 1.3557  max mem: 174
+Epoch: [2]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 485.26931420472624  loss: 0.6028 (0.7079)  acc1: 87.5000 (83.1790)  acc5: 100.0000 (99.6914)  time: 1.3702  data: 1.3535  max mem: 174
+Epoch: [2]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 471.8002249718785  loss: 0.6485 (0.7115)  acc1: 87.5000 (82.6923)  acc5: 100.0000 (99.7253)  time: 1.3646  data: 1.3476  max mem: 174
+Epoch: [2]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 505.3606638854165  loss: 0.6769 (0.7044)  acc1: 87.5000 (82.9208)  acc5: 100.0000 (99.6287)  time: 1.3687  data: 1.3515  max mem: 174
+Epoch: [2]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 397.7010110108924  loss: 0.5696 (0.6945)  acc1: 87.5000 (83.1081)  acc5: 100.0000 (99.6622)  time: 1.3917  data: 1.3740  max mem: 174
+Epoch: [2] Total time: 0:02:41
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.4412 (0.4412)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3839  data: 1.3716  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 85.106 Acc@5 99.149
+Epoch: [3]  [  0/118]  eta: 0:02:45  lr: 0.001  img/s: 499.8053474342742  loss: 0.3771 (0.3771)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.4007  data: 1.3847  max mem: 174
+Epoch: [3]  [ 10/118]  eta: 0:02:31  lr: 0.001  img/s: 505.6271962870317  loss: 0.4639 (0.5685)  acc1: 87.5000 (85.2273)  acc5: 100.0000 (98.8636)  time: 1.4047  data: 1.3887  max mem: 174
+Epoch: [3]  [ 20/118]  eta: 0:02:17  lr: 0.001  img/s: 497.5670922490621  loss: 0.4639 (0.5804)  acc1: 87.5000 (86.3095)  acc5: 100.0000 (99.4048)  time: 1.4047  data: 1.3886  max mem: 174
+Epoch: [3]  [ 30/118]  eta: 0:02:03  lr: 0.001  img/s: 486.4723740485683  loss: 0.4744 (0.5937)  acc1: 87.5000 (85.0806)  acc5: 100.0000 (99.5968)  time: 1.3998  data: 1.3832  max mem: 174
+Epoch: [3]  [ 40/118]  eta: 0:01:49  lr: 0.001  img/s: 510.1783792002433  loss: 0.5388 (0.6080)  acc1: 87.5000 (84.7561)  acc5: 100.0000 (99.6951)  time: 1.3975  data: 1.3809  max mem: 174
+Epoch: [3]  [ 50/118]  eta: 0:01:34  lr: 0.001  img/s: 405.80057324609675  loss: 0.7152 (0.6367)  acc1: 87.5000 (84.0686)  acc5: 100.0000 (99.5098)  time: 1.3765  data: 1.3600  max mem: 174
+Epoch: [3]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 343.82359209771295  loss: 0.5069 (0.6134)  acc1: 87.5000 (85.0410)  acc5: 100.0000 (99.5902)  time: 1.3689  data: 1.3521  max mem: 174
+Epoch: [3]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 484.4425964425964  loss: 0.5035 (0.6047)  acc1: 87.5000 (85.0352)  acc5: 100.0000 (99.6479)  time: 1.3698  data: 1.3530  max mem: 174
+Epoch: [3]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 468.2449344125035  loss: 0.5020 (0.5956)  acc1: 87.5000 (85.3395)  acc5: 100.0000 (99.6914)  time: 1.3504  data: 1.3341  max mem: 174
+Epoch: [3]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 490.99975124014105  loss: 0.5737 (0.5999)  acc1: 87.5000 (85.1648)  acc5: 100.0000 (99.7253)  time: 1.3371  data: 1.3209  max mem: 174
+Epoch: [3]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 489.3599346633998  loss: 0.6070 (0.5943)  acc1: 87.5000 (85.3960)  acc5: 100.0000 (99.7525)  time: 1.2751  data: 1.2587  max mem: 174
+Epoch: [3]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 506.4514142542337  loss: 0.5028 (0.5855)  acc1: 87.5000 (85.5856)  acc5: 100.0000 (99.7748)  time: 1.3047  data: 1.2882  max mem: 174
+Epoch: [3] Total time: 0:02:40
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.3752 (0.3752)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3757  data: 1.3590  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 85.532 Acc@5 99.149
+Epoch: [4]  [  0/118]  eta: 0:02:44  lr: 0.001  img/s: 414.66691382740765  loss: 0.3337 (0.3337)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3958  data: 1.3765  max mem: 174
+Epoch: [4]  [ 10/118]  eta: 0:02:25  lr: 0.001  img/s: 410.93936536318324  loss: 0.3782 (0.5039)  acc1: 87.5000 (85.2273)  acc5: 100.0000 (98.8636)  time: 1.3461  data: 1.3295  max mem: 174
+Epoch: [4]  [ 20/118]  eta: 0:02:11  lr: 0.001  img/s: 544.281853720255  loss: 0.3782 (0.5144)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (99.4048)  time: 1.3347  data: 1.3185  max mem: 174
+Epoch: [4]  [ 30/118]  eta: 0:01:59  lr: 0.001  img/s: 500.2449758482915  loss: 0.3964 (0.5241)  acc1: 87.5000 (86.2903)  acc5: 100.0000 (99.5968)  time: 1.3660  data: 1.3499  max mem: 174
+Epoch: [4]  [ 40/118]  eta: 0:01:46  lr: 0.001  img/s: 489.2743073782444  loss: 0.4613 (0.5359)  acc1: 87.5000 (86.5854)  acc5: 100.0000 (99.6951)  time: 1.4004  data: 1.3842  max mem: 174
+Epoch: [4]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 506.32913837332126  loss: 0.6473 (0.5659)  acc1: 87.5000 (85.7843)  acc5: 100.0000 (99.5098)  time: 1.3827  data: 1.3663  max mem: 174
+Epoch: [4]  [ 60/118]  eta: 0:01:18  lr: 0.001  img/s: 490.963830036287  loss: 0.4787 (0.5440)  acc1: 87.5000 (86.4754)  acc5: 100.0000 (99.5902)  time: 1.3347  data: 1.3178  max mem: 174
+Epoch: [4]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 437.24826687516287  loss: 0.4122 (0.5335)  acc1: 87.5000 (86.6197)  acc5: 100.0000 (99.6479)  time: 1.3359  data: 1.3190  max mem: 174
+Epoch: [4]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 472.89069282372174  loss: 0.4467 (0.5245)  acc1: 87.5000 (87.1914)  acc5: 100.0000 (99.6914)  time: 1.3656  data: 1.3488  max mem: 174
+Epoch: [4]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 434.33346708950876  loss: 0.4723 (0.5288)  acc1: 87.5000 (86.6758)  acc5: 100.0000 (99.7253)  time: 1.3485  data: 1.3314  max mem: 174
+Epoch: [4]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 488.47656204507075  loss: 0.5040 (0.5234)  acc1: 87.5000 (86.7574)  acc5: 100.0000 (99.7525)  time: 1.3535  data: 1.3368  max mem: 174
+Epoch: [4]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 494.3854076114983  loss: 0.4487 (0.5160)  acc1: 87.5000 (87.0495)  acc5: 100.0000 (99.7748)  time: 1.3872  data: 1.3706  max mem: 174
+Epoch: [4] Total time: 0:02:40
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.3365 (0.3365)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3999  data: 1.3753  max mem: 174
+Test: Total time: 0:00:37
+ * Acc@1 85.532 Acc@5 99.149
+Epoch: [5]  [  0/118]  eta: 0:02:44  lr: 0.001  img/s: 501.2987525211026  loss: 0.3062 (0.3062)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3931  data: 1.3772  max mem: 174
+Epoch: [5]  [ 10/118]  eta: 0:02:30  lr: 0.001  img/s: 517.5756902668518  loss: 0.3448 (0.4618)  acc1: 87.5000 (86.3636)  acc5: 100.0000 (98.8636)  time: 1.3978  data: 1.3810  max mem: 174
+Epoch: [5]  [ 20/118]  eta: 0:02:16  lr: 0.001  img/s: 515.3499001689448  loss: 0.3448 (0.4720)  acc1: 87.5000 (88.6905)  acc5: 100.0000 (99.4048)  time: 1.3945  data: 1.3779  max mem: 174
+Epoch: [5]  [ 30/118]  eta: 0:02:02  lr: 0.001  img/s: 501.0292813307252  loss: 0.3503 (0.4770)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (99.5968)  time: 1.3970  data: 1.3795  max mem: 174
+Epoch: [5]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 508.4390029547693  loss: 0.4004 (0.4868)  acc1: 87.5000 (87.8049)  acc5: 100.0000 (99.6951)  time: 1.3995  data: 1.3816  max mem: 174
+Epoch: [5]  [ 50/118]  eta: 0:01:34  lr: 0.001  img/s: 405.45242755987334  loss: 0.5916 (0.5160)  acc1: 87.5000 (86.7647)  acc5: 100.0000 (99.5098)  time: 1.3597  data: 1.3422  max mem: 174
+Epoch: [5]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 488.29884890201845  loss: 0.4372 (0.4952)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (99.5902)  time: 1.3520  data: 1.3349  max mem: 174
+Epoch: [5]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 495.91983565126145  loss: 0.3694 (0.4828)  acc1: 87.5000 (87.8521)  acc5: 100.0000 (99.6479)  time: 1.3758  data: 1.3588  max mem: 174
+Epoch: [5]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 562.4841921748751  loss: 0.3836 (0.4743)  acc1: 87.5000 (88.2716)  acc5: 100.0000 (99.6914)  time: 1.3752  data: 1.3580  max mem: 174
+Epoch: [5]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 511.04086263878526  loss: 0.4549 (0.4781)  acc1: 87.5000 (87.9121)  acc5: 100.0000 (99.7253)  time: 1.3616  data: 1.3444  max mem: 174
+Epoch: [5]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 500.3568691191602  loss: 0.4280 (0.4725)  acc1: 87.5000 (87.8713)  acc5: 100.0000 (99.7525)  time: 1.3590  data: 1.3422  max mem: 174
+Epoch: [5]  [110/118]  eta: 0:00:11  lr: 0.001  img/s: 530.1109373272035  loss: 0.4047 (0.4665)  acc1: 87.5000 (88.1757)  acc5: 100.0000 (99.7748)  time: 1.3893  data: 1.3729  max mem: 174
+Epoch: [5] Total time: 0:02:42
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.3062 (0.3062)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3606  data: 1.3473  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 86.383 Acc@5 99.574
+Epoch: [6]  [  0/118]  eta: 0:02:44  lr: 0.001  img/s: 402.66445860484095  loss: 0.2794 (0.2794)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3980  data: 1.3781  max mem: 174
+Epoch: [6]  [ 10/118]  eta: 0:02:32  lr: 0.001  img/s: 506.51257434411133  loss: 0.3151 (0.4289)  acc1: 87.5000 (86.3636)  acc5: 100.0000 (98.8636)  time: 1.4081  data: 1.3907  max mem: 174
+Epoch: [6]  [ 20/118]  eta: 0:02:16  lr: 0.001  img/s: 510.6908559600633  loss: 0.3151 (0.4415)  acc1: 87.5000 (89.2857)  acc5: 100.0000 (99.4048)  time: 1.3941  data: 1.3777  max mem: 174
+Epoch: [6]  [ 30/118]  eta: 0:02:02  lr: 0.001  img/s: 395.8617793140875  loss: 0.3189 (0.4418)  acc1: 87.5000 (88.3065)  acc5: 100.0000 (99.5968)  time: 1.3850  data: 1.3685  max mem: 174
+Epoch: [6]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 511.9296971546266  loss: 0.3506 (0.4505)  acc1: 87.5000 (88.4146)  acc5: 100.0000 (99.6951)  time: 1.3849  data: 1.3682  max mem: 174
+Epoch: [6]  [ 50/118]  eta: 0:01:34  lr: 0.001  img/s: 507.3473547333565  loss: 0.5328 (0.4781)  acc1: 87.5000 (87.2549)  acc5: 100.0000 (99.5098)  time: 1.3779  data: 1.3615  max mem: 174
+Epoch: [6]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 499.4036523835747  loss: 0.3951 (0.4580)  acc1: 87.5000 (88.3197)  acc5: 100.0000 (99.5902)  time: 1.3812  data: 1.3646  max mem: 174
+Epoch: [6]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 333.7387931291712  loss: 0.3400 (0.4439)  acc1: 100.0000 (88.7324)  acc5: 100.0000 (99.6479)  time: 1.3772  data: 1.3604  max mem: 174
+Epoch: [6]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 511.75012201073696  loss: 0.3444 (0.4360)  acc1: 87.5000 (89.1975)  acc5: 100.0000 (99.6914)  time: 1.3693  data: 1.3527  max mem: 174
+Epoch: [6]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 423.85438009221247  loss: 0.4419 (0.4393)  acc1: 87.5000 (88.7363)  acc5: 100.0000 (99.7253)  time: 1.3699  data: 1.3533  max mem: 174
+Epoch: [6]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 559.110074315993  loss: 0.3822 (0.4334)  acc1: 87.5000 (88.8614)  acc5: 100.0000 (99.7525)  time: 1.3279  data: 1.3109  max mem: 174
+Epoch: [6]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 501.1340412503547  loss: 0.3655 (0.4286)  acc1: 100.0000 (89.1892)  acc5: 100.0000 (99.7748)  time: 1.3276  data: 1.3110  max mem: 174
+Epoch: [6] Total time: 0:02:41
+Test:  [ 0/30]  eta: 0:00:35  loss: 0.2816 (0.2816)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.1730  data: 1.1593  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 86.383 Acc@5 99.574
+Epoch: [7]  [  0/118]  eta: 0:02:41  lr: 0.001  img/s: 504.8512277323062  loss: 0.2517 (0.2517)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3725  data: 1.3566  max mem: 174
+Epoch: [7]  [ 10/118]  eta: 0:02:26  lr: 0.001  img/s: 414.18066013281657  loss: 0.2915 (0.4002)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (98.8636)  time: 1.3603  data: 1.3437  max mem: 174
+Epoch: [7]  [ 20/118]  eta: 0:02:15  lr: 0.001  img/s: 491.10035858031466  loss: 0.2915 (0.4173)  acc1: 87.5000 (89.8810)  acc5: 100.0000 (99.4048)  time: 1.3804  data: 1.3635  max mem: 174
+Epoch: [7]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 548.0422042922942  loss: 0.2926 (0.4133)  acc1: 87.5000 (89.1129)  acc5: 100.0000 (99.5968)  time: 1.3989  data: 1.3823  max mem: 174
+Epoch: [7]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 505.77962678243046  loss: 0.3099 (0.4215)  acc1: 87.5000 (89.3293)  acc5: 100.0000 (99.6951)  time: 1.3740  data: 1.3575  max mem: 174
+Epoch: [7]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 451.75335236146265  loss: 0.4587 (0.4474)  acc1: 87.5000 (87.9902)  acc5: 100.0000 (99.5098)  time: 1.3585  data: 1.3418  max mem: 174
+Epoch: [7]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 462.89636905418826  loss: 0.3593 (0.4280)  acc1: 100.0000 (89.1393)  acc5: 100.0000 (99.5902)  time: 1.3659  data: 1.3492  max mem: 174
+Epoch: [7]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 368.030359865311  loss: 0.2864 (0.4127)  acc1: 100.0000 (89.6127)  acc5: 100.0000 (99.6479)  time: 1.3698  data: 1.3519  max mem: 174
+Epoch: [7]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 508.2310744903214  loss: 0.3127 (0.4054)  acc1: 87.5000 (89.9691)  acc5: 100.0000 (99.6914)  time: 1.3727  data: 1.3550  max mem: 174
+Epoch: [7]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 479.3969682682554  loss: 0.4301 (0.4080)  acc1: 87.5000 (89.8352)  acc5: 100.0000 (99.7253)  time: 1.3705  data: 1.3534  max mem: 174
+Epoch: [7]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 407.51566086544653  loss: 0.3542 (0.4019)  acc1: 87.5000 (89.9752)  acc5: 100.0000 (99.7525)  time: 1.3721  data: 1.3550  max mem: 174
+Epoch: [7]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 481.55731282021844  loss: 0.3174 (0.3980)  acc1: 100.0000 (90.2027)  acc5: 100.0000 (99.7748)  time: 1.3801  data: 1.3633  max mem: 174
+Epoch: [7] Total time: 0:02:41
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2627 (0.2627)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3655  data: 1.3515  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 87.660 Acc@5 99.574
+Epoch: [8]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 512.9470610716197  loss: 0.2247 (0.2247)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3884  data: 1.3728  max mem: 174
+Epoch: [8]  [ 10/118]  eta: 0:02:24  lr: 0.001  img/s: 452.8752361928413  loss: 0.2745 (0.3741)  acc1: 87.5000 (88.6364)  acc5: 100.0000 (98.8636)  time: 1.3394  data: 1.3229  max mem: 174
+Epoch: [8]  [ 20/118]  eta: 0:02:12  lr: 0.001  img/s: 540.494386366199  loss: 0.2745 (0.3967)  acc1: 87.5000 (90.4762)  acc5: 100.0000 (99.4048)  time: 1.3493  data: 1.3330  max mem: 174
+Epoch: [8]  [ 30/118]  eta: 0:02:00  lr: 0.001  img/s: 482.88095786322816  loss: 0.2706 (0.3891)  acc1: 87.5000 (89.9194)  acc5: 100.0000 (99.5968)  time: 1.3791  data: 1.3626  max mem: 174
+Epoch: [8]  [ 40/118]  eta: 0:01:45  lr: 0.001  img/s: 516.683071048012  loss: 0.2970 (0.3972)  acc1: 87.5000 (89.9390)  acc5: 100.0000 (99.6951)  time: 1.3486  data: 1.3319  max mem: 174
+Epoch: [8]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 511.3212135988906  loss: 0.4122 (0.4215)  acc1: 87.5000 (88.9706)  acc5: 100.0000 (99.5098)  time: 1.3405  data: 1.3240  max mem: 174
+Epoch: [8]  [ 60/118]  eta: 0:01:18  lr: 0.001  img/s: 346.9843955203044  loss: 0.3210 (0.4029)  acc1: 100.0000 (89.9590)  acc5: 100.0000 (99.5902)  time: 1.3631  data: 1.3460  max mem: 174
+Epoch: [8]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 489.07462686567163  loss: 0.2806 (0.3867)  acc1: 100.0000 (90.3169)  acc5: 100.0000 (99.6479)  time: 1.3622  data: 1.3454  max mem: 174
+Epoch: [8]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 481.1430046315548  loss: 0.2833 (0.3798)  acc1: 100.0000 (90.7407)  acc5: 100.0000 (99.6914)  time: 1.3560  data: 1.3401  max mem: 174
+Epoch: [8]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 517.5038479927205  loss: 0.3917 (0.3818)  acc1: 87.5000 (90.5220)  acc5: 100.0000 (99.7253)  time: 1.3585  data: 1.3424  max mem: 174
+Epoch: [8]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 498.57997028231796  loss: 0.3355 (0.3756)  acc1: 87.5000 (90.5941)  acc5: 100.0000 (99.7525)  time: 1.3739  data: 1.3579  max mem: 174
+Epoch: [8]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 487.9934845840605  loss: 0.2870 (0.3723)  acc1: 100.0000 (90.7658)  acc5: 100.0000 (99.7748)  time: 1.3828  data: 1.3668  max mem: 174
+Epoch: [8] Total time: 0:02:40
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2494 (0.2494)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3400  data: 1.3271  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 87.660 Acc@5 99.574
+Epoch: [9]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 480.4884726637454  loss: 0.1999 (0.1999)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3885  data: 1.3718  max mem: 174
+Epoch: [9]  [ 10/118]  eta: 0:02:29  lr: 0.001  img/s: 471.1642327566839  loss: 0.2585 (0.3501)  acc1: 87.5000 (89.7727)  acc5: 100.0000 (98.8636)  time: 1.3880  data: 1.3715  max mem: 174
+Epoch: [9]  [ 20/118]  eta: 0:02:15  lr: 0.001  img/s: 444.99538486021964  loss: 0.2585 (0.3784)  acc1: 87.5000 (91.0714)  acc5: 100.0000 (99.4048)  time: 1.3848  data: 1.3682  max mem: 174
+Epoch: [9]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 548.4363374848812  loss: 0.2523 (0.3678)  acc1: 87.5000 (91.1290)  acc5: 100.0000 (99.5968)  time: 1.3726  data: 1.3564  max mem: 174
+Epoch: [9]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 518.0711462450593  loss: 0.2889 (0.3760)  acc1: 87.5000 (90.8537)  acc5: 100.0000 (99.6951)  time: 1.3784  data: 1.3613  max mem: 174
+Epoch: [9]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 512.1406636344211  loss: 0.3885 (0.3989)  acc1: 87.5000 (90.1961)  acc5: 100.0000 (99.5098)  time: 1.3794  data: 1.3621  max mem: 174
+Epoch: [9]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 502.2066034064717  loss: 0.2878 (0.3811)  acc1: 100.0000 (90.9836)  acc5: 100.0000 (99.5902)  time: 1.3738  data: 1.3571  max mem: 174
+Epoch: [9]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 510.38790441567926  loss: 0.2748 (0.3644)  acc1: 100.0000 (91.7254)  acc5: 100.0000 (99.6479)  time: 1.3769  data: 1.3596  max mem: 174
+Epoch: [9]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 539.2522499357161  loss: 0.2569 (0.3579)  acc1: 100.0000 (91.9753)  acc5: 100.0000 (99.6914)  time: 1.3723  data: 1.3552  max mem: 174
+Epoch: [9]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 510.1783792002433  loss: 0.3786 (0.3593)  acc1: 100.0000 (91.7582)  acc5: 100.0000 (99.7253)  time: 1.3709  data: 1.3543  max mem: 174
+Epoch: [9]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 501.71850655661717  loss: 0.3211 (0.3531)  acc1: 87.5000 (91.7079)  acc5: 100.0000 (99.7525)  time: 1.3764  data: 1.3600  max mem: 174
+Epoch: [9]  [110/118]  eta: 0:00:11  lr: 0.001  img/s: 500.8722235490805  loss: 0.2850 (0.3502)  acc1: 100.0000 (91.7793)  acc5: 100.0000 (99.7748)  time: 1.3687  data: 1.3526  max mem: 174
+Epoch: [9] Total time: 0:02:42
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2409 (0.2409)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3604  data: 1.3476  max mem: 174
+Test: Total time: 0:00:38
+ * Acc@1 88.085 Acc@5 99.574
+Epoch: [10]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 545.9911481385057  loss: 0.1780 (0.1780)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3823  data: 1.3677  max mem: 174
+Epoch: [10]  [ 10/118]  eta: 0:02:22  lr: 0.001  img/s: 497.5744706091702  loss: 0.2434 (0.3283)  acc1: 87.5000 (89.7727)  acc5: 100.0000 (98.8636)  time: 1.3163  data: 1.3003  max mem: 174
+Epoch: [10]  [ 20/118]  eta: 0:02:12  lr: 0.001  img/s: 485.0378293990951  loss: 0.2434 (0.3617)  acc1: 87.5000 (91.0714)  acc5: 100.0000 (99.4048)  time: 1.3490  data: 1.3326  max mem: 174
+Epoch: [10]  [ 30/118]  eta: 0:01:59  lr: 0.001  img/s: 505.0640014449997  loss: 0.2373 (0.3489)  acc1: 87.5000 (91.1290)  acc5: 100.0000 (99.5968)  time: 1.3863  data: 1.3700  max mem: 174
+Epoch: [10]  [ 40/118]  eta: 0:01:46  lr: 0.001  img/s: 498.95808116105815  loss: 0.2822 (0.3571)  acc1: 87.5000 (90.8537)  acc5: 100.0000 (99.6951)  time: 1.3715  data: 1.3553  max mem: 174
+Epoch: [10]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 506.2374702030717  loss: 0.3647 (0.3788)  acc1: 87.5000 (90.1961)  acc5: 100.0000 (99.5098)  time: 1.3759  data: 1.3594  max mem: 174
+Epoch: [10]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 485.95102028993904  loss: 0.2680 (0.3618)  acc1: 100.0000 (91.1885)  acc5: 100.0000 (99.5902)  time: 1.3840  data: 1.3671  max mem: 174
+Epoch: [10]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 517.0015099688761  loss: 0.2615 (0.3448)  acc1: 100.0000 (92.0775)  acc5: 100.0000 (99.6479)  time: 1.3261  data: 1.3096  max mem: 174
+Epoch: [10]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 492.73740785338777  loss: 0.2331 (0.3387)  acc1: 100.0000 (92.2840)  acc5: 100.0000 (99.6914)  time: 1.3177  data: 1.3010  max mem: 174
+Epoch: [10]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 402.037262913217  loss: 0.3647 (0.3396)  acc1: 100.0000 (92.0330)  acc5: 100.0000 (99.7253)  time: 1.3438  data: 1.3269  max mem: 174
+Epoch: [10]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 514.0157171525299  loss: 0.2973 (0.3334)  acc1: 87.5000 (91.9554)  acc5: 100.0000 (99.7525)  time: 1.2641  data: 1.2482  max mem: 174
+Epoch: [10]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 490.94227983671556  loss: 0.2823 (0.3307)  acc1: 100.0000 (92.0045)  acc5: 100.0000 (99.7748)  time: 1.2809  data: 1.2649  max mem: 174
+Epoch: [10] Total time: 0:02:38
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.2361 (0.2361)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3870  data: 1.3742  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 88.085 Acc@5 99.574
+Epoch: [11]  [  0/118]  eta: 0:02:45  lr: 0.001  img/s: 473.9594327363128  loss: 0.1590 (0.1590)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3988  data: 1.3819  max mem: 174
+Epoch: [11]  [ 10/118]  eta: 0:02:31  lr: 0.001  img/s: 475.78067352002836  loss: 0.2292 (0.3087)  acc1: 100.0000 (92.0455)  acc5: 100.0000 (100.0000)  time: 1.4060  data: 1.3891  max mem: 174
+Epoch: [11]  [ 20/118]  eta: 0:02:16  lr: 0.001  img/s: 470.9526162137885  loss: 0.2292 (0.3463)  acc1: 100.0000 (92.2619)  acc5: 100.0000 (100.0000)  time: 1.3965  data: 1.3795  max mem: 174
+Epoch: [11]  [ 30/118]  eta: 0:02:02  lr: 0.001  img/s: 557.0679682571305  loss: 0.2251 (0.3318)  acc1: 87.5000 (91.9355)  acc5: 100.0000 (100.0000)  time: 1.3854  data: 1.3688  max mem: 174
+Epoch: [11]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 500.9694381821168  loss: 0.2762 (0.3398)  acc1: 87.5000 (91.4634)  acc5: 100.0000 (100.0000)  time: 1.3869  data: 1.3703  max mem: 174
+Epoch: [11]  [ 50/118]  eta: 0:01:34  lr: 0.001  img/s: 507.70047358944487  loss: 0.3408 (0.3606)  acc1: 87.5000 (90.6863)  acc5: 100.0000 (99.7549)  time: 1.3840  data: 1.3671  max mem: 174
+Epoch: [11]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 488.39835232813704  loss: 0.2599 (0.3443)  acc1: 100.0000 (91.5984)  acc5: 100.0000 (99.7951)  time: 1.3578  data: 1.3408  max mem: 174
+Epoch: [11]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 513.6537619594336  loss: 0.2408 (0.3274)  acc1: 100.0000 (92.6056)  acc5: 100.0000 (99.8239)  time: 1.3549  data: 1.3384  max mem: 174
+Epoch: [11]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 509.1874108470667  loss: 0.2117 (0.3215)  acc1: 100.0000 (92.7469)  acc5: 100.0000 (99.8457)  time: 1.3715  data: 1.3553  max mem: 174
+Epoch: [11]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 514.3545281746275  loss: 0.3502 (0.3220)  acc1: 100.0000 (92.5824)  acc5: 100.0000 (99.8626)  time: 1.3605  data: 1.3437  max mem: 174
+Epoch: [11]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 506.3520606033169  loss: 0.2778 (0.3159)  acc1: 100.0000 (92.8218)  acc5: 100.0000 (99.8762)  time: 1.3609  data: 1.3444  max mem: 174
+Epoch: [11]  [110/118]  eta: 0:00:11  lr: 0.001  img/s: 500.32702601953326  loss: 0.2764 (0.3134)  acc1: 100.0000 (92.7928)  acc5: 100.0000 (99.8874)  time: 1.3850  data: 1.3685  max mem: 174
+Epoch: [11] Total time: 0:02:42
+Test:  [ 0/30]  eta: 0:00:42  loss: 0.2339 (0.2339)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.4126  data: 1.3997  max mem: 174
+Test: Total time: 0:00:38
+ * Acc@1 89.362 Acc@5 99.574
+Epoch: [12]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 498.7133557266431  loss: 0.1428 (0.1428)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3848  data: 1.3687  max mem: 174
+Epoch: [12]  [ 10/118]  eta: 0:02:30  lr: 0.001  img/s: 513.3629937884398  loss: 0.2160 (0.2910)  acc1: 100.0000 (93.1818)  acc5: 100.0000 (100.0000)  time: 1.3898  data: 1.3734  max mem: 174
+Epoch: [12]  [ 20/118]  eta: 0:02:16  lr: 0.001  img/s: 509.0638104196377  loss: 0.2160 (0.3318)  acc1: 100.0000 (92.8571)  acc5: 100.0000 (100.0000)  time: 1.3895  data: 1.3728  max mem: 174
+Epoch: [12]  [ 30/118]  eta: 0:02:02  lr: 0.001  img/s: 489.88863258095597  loss: 0.2150 (0.3163)  acc1: 87.5000 (92.7419)  acc5: 100.0000 (100.0000)  time: 1.3900  data: 1.3732  max mem: 174
+Epoch: [12]  [ 40/118]  eta: 0:01:48  lr: 0.001  img/s: 506.5737492074036  loss: 0.2706 (0.3240)  acc1: 87.5000 (92.3780)  acc5: 100.0000 (100.0000)  time: 1.3815  data: 1.3645  max mem: 174
+Epoch: [12]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 508.5931337627889  loss: 0.3171 (0.3440)  acc1: 87.5000 (91.4216)  acc5: 100.0000 (99.7549)  time: 1.3511  data: 1.3345  max mem: 174
+Epoch: [12]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 490.89200339409547  loss: 0.2462 (0.3284)  acc1: 100.0000 (92.4180)  acc5: 100.0000 (99.7951)  time: 1.3328  data: 1.3163  max mem: 174
+Epoch: [12]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 399.52411116138404  loss: 0.2244 (0.3117)  acc1: 100.0000 (93.3099)  acc5: 100.0000 (99.8239)  time: 1.3345  data: 1.3175  max mem: 174
+Epoch: [12]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 498.38002584401505  loss: 0.2045 (0.3060)  acc1: 100.0000 (93.3642)  acc5: 100.0000 (99.8457)  time: 1.3525  data: 1.3361  max mem: 174
+Epoch: [12]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 410.1758083246745  loss: 0.3355 (0.3062)  acc1: 100.0000 (93.4066)  acc5: 100.0000 (99.8626)  time: 1.3763  data: 1.3599  max mem: 174
+Epoch: [12]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 301.8978091682037  loss: 0.2643 (0.3003)  acc1: 100.0000 (93.5644)  acc5: 100.0000 (99.8762)  time: 1.3836  data: 1.3666  max mem: 174
+Epoch: [12]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 468.6373184357542  loss: 0.2617 (0.2978)  acc1: 100.0000 (93.5811)  acc5: 100.0000 (99.8874)  time: 1.3940  data: 1.3766  max mem: 174
+Epoch: [12] Total time: 0:02:41
+Test:  [ 0/30]  eta: 0:00:23  loss: 0.2334 (0.2334)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 0.7698  data: 0.7564  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 90.213 Acc@5 99.574
+Epoch: [13]  [  0/118]  eta: 0:02:42  lr: 0.001  img/s: 492.7518796992481  loss: 0.1289 (0.1289)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3772  data: 1.3610  max mem: 174
+Epoch: [13]  [ 10/118]  eta: 0:02:32  lr: 0.001  img/s: 382.5436304352783  loss: 0.2040 (0.2751)  acc1: 100.0000 (94.3182)  acc5: 100.0000 (100.0000)  time: 1.4081  data: 1.3908  max mem: 174
+Epoch: [13]  [ 20/118]  eta: 0:02:17  lr: 0.001  img/s: 516.2696864325937  loss: 0.2082 (0.3182)  acc1: 100.0000 (94.0476)  acc5: 100.0000 (100.0000)  time: 1.4011  data: 1.3841  max mem: 174
+Epoch: [13]  [ 30/118]  eta: 0:02:00  lr: 0.001  img/s: 509.08698092882827  loss: 0.2082 (0.3021)  acc1: 100.0000 (93.9516)  acc5: 100.0000 (100.0000)  time: 1.3498  data: 1.3335  max mem: 174
+Epoch: [13]  [ 40/118]  eta: 0:01:46  lr: 0.001  img/s: 502.6429384624603  loss: 0.2652 (0.3094)  acc1: 100.0000 (93.2927)  acc5: 100.0000 (100.0000)  time: 1.3277  data: 1.3113  max mem: 174
+Epoch: [13]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 503.32151321513214  loss: 0.2853 (0.3288)  acc1: 87.5000 (92.1569)  acc5: 100.0000 (99.7549)  time: 1.3624  data: 1.3457  max mem: 174
+Epoch: [13]  [ 60/118]  eta: 0:01:18  lr: 0.001  img/s: 502.00374021932646  loss: 0.2324 (0.3138)  acc1: 100.0000 (93.0328)  acc5: 100.0000 (99.7951)  time: 1.3527  data: 1.3364  max mem: 174
+Epoch: [13]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 517.1130563432375  loss: 0.2111 (0.2974)  acc1: 100.0000 (93.8380)  acc5: 100.0000 (99.8239)  time: 1.3255  data: 1.3088  max mem: 174
+Epoch: [13]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 439.97157280534975  loss: 0.1999 (0.2918)  acc1: 100.0000 (93.8272)  acc5: 100.0000 (99.8457)  time: 1.3451  data: 1.3282  max mem: 174
+Epoch: [13]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 504.03220573213963  loss: 0.3210 (0.2919)  acc1: 100.0000 (94.2308)  acc5: 100.0000 (99.8626)  time: 1.3536  data: 1.3373  max mem: 174
+Epoch: [13]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 506.79563201377454  loss: 0.2529 (0.2861)  acc1: 100.0000 (94.3069)  acc5: 100.0000 (99.8762)  time: 1.3158  data: 1.2994  max mem: 174
+Epoch: [13]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 413.3133622388648  loss: 0.2481 (0.2837)  acc1: 100.0000 (94.2568)  acc5: 100.0000 (99.8874)  time: 1.3181  data: 1.3017  max mem: 174
+Epoch: [13] Total time: 0:02:39
+Test:  [ 0/30]  eta: 0:00:34  loss: 0.2339 (0.2339)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.1653  data: 1.1513  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 90.213 Acc@5 100.000
+Epoch: [14]  [  0/118]  eta: 0:02:42  lr: 0.001  img/s: 496.5877164422081  loss: 0.1170 (0.1170)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3769  data: 1.3608  max mem: 174
+Epoch: [14]  [ 10/118]  eta: 0:02:31  lr: 0.001  img/s: 498.7504199057627  loss: 0.1932 (0.2609)  acc1: 100.0000 (95.4545)  acc5: 100.0000 (100.0000)  time: 1.4033  data: 1.3872  max mem: 174
+Epoch: [14]  [ 20/118]  eta: 0:02:14  lr: 0.001  img/s: 500.80494320980284  loss: 0.2031 (0.3054)  acc1: 100.0000 (94.6429)  acc5: 100.0000 (100.0000)  time: 1.3759  data: 1.3595  max mem: 174
+Epoch: [14]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 512.9000168141728  loss: 0.2031 (0.2891)  acc1: 100.0000 (94.3548)  acc5: 100.0000 (100.0000)  time: 1.3625  data: 1.3458  max mem: 174
+Epoch: [14]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 476.27366150002837  loss: 0.2600 (0.2959)  acc1: 100.0000 (93.5976)  acc5: 100.0000 (100.0000)  time: 1.3700  data: 1.3533  max mem: 174
+Epoch: [14]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 506.91813333736195  loss: 0.2561 (0.3147)  acc1: 87.5000 (92.4020)  acc5: 100.0000 (99.7549)  time: 1.3332  data: 1.3160  max mem: 174
+Epoch: [14]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 398.0029179071726  loss: 0.2203 (0.3003)  acc1: 100.0000 (93.2377)  acc5: 100.0000 (99.7951)  time: 1.3455  data: 1.3281  max mem: 174
+Epoch: [14]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 454.2055093062606  loss: 0.2003 (0.2844)  acc1: 100.0000 (94.0141)  acc5: 100.0000 (99.8239)  time: 1.3712  data: 1.3542  max mem: 174
+Epoch: [14]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 479.74653284149724  loss: 0.1960 (0.2789)  acc1: 100.0000 (93.9815)  acc5: 100.0000 (99.8457)  time: 1.3574  data: 1.3408  max mem: 174
+Epoch: [14]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 483.72326898957715  loss: 0.3071 (0.2789)  acc1: 100.0000 (94.5055)  acc5: 100.0000 (99.8626)  time: 1.3111  data: 1.2948  max mem: 174
+Epoch: [14]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 482.64480308391586  loss: 0.2414 (0.2733)  acc1: 100.0000 (94.5545)  acc5: 100.0000 (99.8762)  time: 1.3235  data: 1.3067  max mem: 174
+Epoch: [14]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 442.9043294614572  loss: 0.2365 (0.2708)  acc1: 100.0000 (94.4820)  acc5: 100.0000 (99.8874)  time: 1.3832  data: 1.3662  max mem: 174
+Epoch: [14] Total time: 0:02:40
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.2349 (0.2349)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3769  data: 1.3634  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 89.787 Acc@5 100.000
+Epoch: [15]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 483.18691319624446  loss: 0.1068 (0.1068)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3854  data: 1.3688  max mem: 174
+Epoch: [15]  [ 10/118]  eta: 0:02:26  lr: 0.001  img/s: 472.8307193687029  loss: 0.1884 (0.2480)  acc1: 100.0000 (95.4545)  acc5: 100.0000 (100.0000)  time: 1.3587  data: 1.3425  max mem: 174
+Epoch: [15]  [ 20/118]  eta: 0:02:14  lr: 0.001  img/s: 510.63645356180854  loss: 0.1925 (0.2932)  acc1: 100.0000 (94.6429)  acc5: 100.0000 (100.0000)  time: 1.3767  data: 1.3603  max mem: 174
+Epoch: [15]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 488.6259410813881  loss: 0.1982 (0.2772)  acc1: 100.0000 (94.3548)  acc5: 100.0000 (100.0000)  time: 1.3851  data: 1.3685  max mem: 174
+Epoch: [15]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 295.1500800450363  loss: 0.2521 (0.2833)  acc1: 100.0000 (93.5976)  acc5: 100.0000 (100.0000)  time: 1.3735  data: 1.3563  max mem: 174
+Epoch: [15]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 499.0248661511005  loss: 0.2302 (0.3016)  acc1: 87.5000 (92.4020)  acc5: 100.0000 (99.7549)  time: 1.3689  data: 1.3516  max mem: 174
+Epoch: [15]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 489.75277684527026  loss: 0.2093 (0.2879)  acc1: 100.0000 (93.4426)  acc5: 100.0000 (99.7951)  time: 1.3382  data: 1.3214  max mem: 174
+Epoch: [15]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 484.7015181937683  loss: 0.1924 (0.2724)  acc1: 100.0000 (94.1901)  acc5: 100.0000 (99.8239)  time: 1.3393  data: 1.3230  max mem: 174
+Epoch: [15]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 503.570783245539  loss: 0.1924 (0.2670)  acc1: 100.0000 (94.1358)  acc5: 100.0000 (99.8457)  time: 1.3487  data: 1.3328  max mem: 174
+Epoch: [15]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 398.30528352504064  loss: 0.2937 (0.2669)  acc1: 100.0000 (94.6429)  acc5: 100.0000 (99.8626)  time: 1.3457  data: 1.3294  max mem: 174
+Epoch: [15]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 513.9291162505743  loss: 0.2290 (0.2615)  acc1: 100.0000 (94.6782)  acc5: 100.0000 (99.8762)  time: 1.3683  data: 1.3516  max mem: 174
+Epoch: [15]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 489.88863258095597  loss: 0.2263 (0.2591)  acc1: 100.0000 (94.5946)  acc5: 100.0000 (99.8874)  time: 1.3846  data: 1.3676  max mem: 174
+Epoch: [15] Total time: 0:02:40
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2361 (0.2361)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3647  data: 1.3518  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 89.787 Acc@5 100.000
+Epoch: [16]  [  0/118]  eta: 0:02:44  lr: 0.001  img/s: 482.29793595124477  loss: 0.0979 (0.0979)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3981  data: 1.3815  max mem: 174
+Epoch: [16]  [ 10/118]  eta: 0:02:28  lr: 0.001  img/s: 512.7354298462761  loss: 0.1804 (0.2364)  acc1: 100.0000 (95.4545)  acc5: 100.0000 (100.0000)  time: 1.3793  data: 1.3625  max mem: 174
+Epoch: [16]  [ 20/118]  eta: 0:02:11  lr: 0.001  img/s: 506.30621821858074  loss: 0.1850 (0.2817)  acc1: 100.0000 (94.6429)  acc5: 100.0000 (100.0000)  time: 1.3393  data: 1.3224  max mem: 174
+Epoch: [16]  [ 30/118]  eta: 0:01:58  lr: 0.001  img/s: 412.76933485871746  loss: 0.1932 (0.2661)  acc1: 100.0000 (94.3548)  acc5: 100.0000 (100.0000)  time: 1.3317  data: 1.3149  max mem: 174
+Epoch: [16]  [ 40/118]  eta: 0:01:46  lr: 0.001  img/s: 481.4260380498723  loss: 0.2335 (0.2716)  acc1: 100.0000 (93.5976)  acc5: 100.0000 (100.0000)  time: 1.3792  data: 1.3623  max mem: 174
+Epoch: [16]  [ 50/118]  eta: 0:01:32  lr: 0.001  img/s: 467.7553774308218  loss: 0.2091 (0.2895)  acc1: 100.0000 (92.8922)  acc5: 100.0000 (99.7549)  time: 1.3924  data: 1.3754  max mem: 174
+Epoch: [16]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 485.49399542784386  loss: 0.1993 (0.2763)  acc1: 100.0000 (93.8525)  acc5: 100.0000 (99.7951)  time: 1.3778  data: 1.3612  max mem: 174
+Epoch: [16]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 486.53585824899227  loss: 0.1891 (0.2614)  acc1: 100.0000 (94.5423)  acc5: 100.0000 (99.8239)  time: 1.3695  data: 1.3526  max mem: 174
+Epoch: [16]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 514.8596329712146  loss: 0.1891 (0.2560)  acc1: 100.0000 (94.4444)  acc5: 100.0000 (99.8457)  time: 1.3044  data: 1.2877  max mem: 174
+Epoch: [16]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 515.682547488781  loss: 0.2779 (0.2560)  acc1: 100.0000 (94.9176)  acc5: 100.0000 (99.8626)  time: 1.3005  data: 1.2844  max mem: 174
+Epoch: [16]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 482.9643617940008  loss: 0.2181 (0.2507)  acc1: 100.0000 (95.0495)  acc5: 100.0000 (99.8762)  time: 1.2808  data: 1.2639  max mem: 174
+Epoch: [16]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 473.237504231073  loss: 0.2174 (0.2483)  acc1: 100.0000 (94.9324)  acc5: 100.0000 (99.8874)  time: 1.3018  data: 1.2847  max mem: 174
+Epoch: [16] Total time: 0:02:38
+Test:  [ 0/30]  eta: 0:00:41  loss: 0.2374 (0.2374)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3859  data: 1.3731  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 89.362 Acc@5 100.000
+Epoch: [17]  [  0/118]  eta: 0:02:43  lr: 0.001  img/s: 484.5055519457079  loss: 0.0901 (0.0901)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.3852  data: 1.3687  max mem: 174
+Epoch: [17]  [ 10/118]  eta: 0:02:30  lr: 0.001  img/s: 505.85587650003015  loss: 0.1701 (0.2258)  acc1: 100.0000 (95.4545)  acc5: 100.0000 (100.0000)  time: 1.3938  data: 1.3763  max mem: 174
+Epoch: [17]  [ 20/118]  eta: 0:02:14  lr: 0.001  img/s: 490.5403564171162  loss: 0.1816 (0.2708)  acc1: 100.0000 (94.6429)  acc5: 100.0000 (100.0000)  time: 1.3759  data: 1.3589  max mem: 174
+Epoch: [17]  [ 30/118]  eta: 0:02:01  lr: 0.001  img/s: 483.96746091270984  loss: 0.1883 (0.2558)  acc1: 100.0000 (94.3548)  acc5: 100.0000 (100.0000)  time: 1.3710  data: 1.3537  max mem: 174
+Epoch: [17]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 514.0157171525299  loss: 0.2167 (0.2607)  acc1: 100.0000 (94.2073)  acc5: 100.0000 (100.0000)  time: 1.3671  data: 1.3497  max mem: 174
+Epoch: [17]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 439.0734483976917  loss: 0.2001 (0.2783)  acc1: 100.0000 (93.6275)  acc5: 100.0000 (99.7549)  time: 1.3678  data: 1.3508  max mem: 174
+Epoch: [17]  [ 60/118]  eta: 0:01:19  lr: 0.001  img/s: 541.5761253772778  loss: 0.1875 (0.2655)  acc1: 100.0000 (94.4672)  acc5: 100.0000 (99.7951)  time: 1.3797  data: 1.3624  max mem: 174
+Epoch: [17]  [ 70/118]  eta: 0:01:05  lr: 0.001  img/s: 491.3376676623909  loss: 0.1860 (0.2512)  acc1: 100.0000 (95.0704)  acc5: 100.0000 (99.8239)  time: 1.3702  data: 1.3532  max mem: 174
+Epoch: [17]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 506.19928492766303  loss: 0.1860 (0.2458)  acc1: 100.0000 (94.9074)  acc5: 100.0000 (99.8457)  time: 1.3240  data: 1.3075  max mem: 174
+Epoch: [17]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 515.6746223239945  loss: 0.2631 (0.2459)  acc1: 100.0000 (95.3297)  acc5: 100.0000 (99.8626)  time: 1.3097  data: 1.2933  max mem: 174
+Epoch: [17]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 509.9147772171904  loss: 0.2094 (0.2407)  acc1: 100.0000 (95.4208)  acc5: 100.0000 (99.8762)  time: 1.3147  data: 1.2980  max mem: 174
+Epoch: [17]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 495.83922449462113  loss: 0.2094 (0.2383)  acc1: 100.0000 (95.2703)  acc5: 100.0000 (99.8874)  time: 1.3384  data: 1.3214  max mem: 174
+Epoch: [17] Total time: 0:02:39
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2385 (0.2385)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3648  data: 1.3512  max mem: 174
+Test: Total time: 0:00:39
+ * Acc@1 89.787 Acc@5 100.000
+Epoch: [18]  [  0/118]  eta: 0:02:47  lr: 0.001  img/s: 491.3448624269669  loss: 0.0833 (0.0833)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 1.4213  data: 1.4050  max mem: 174
+Epoch: [18]  [ 10/118]  eta: 0:02:31  lr: 0.001  img/s: 510.0620506194421  loss: 0.1611 (0.2161)  acc1: 100.0000 (96.5909)  acc5: 100.0000 (100.0000)  time: 1.4058  data: 1.3889  max mem: 174
+Epoch: [18]  [ 20/118]  eta: 0:02:17  lr: 0.001  img/s: 507.2399812550075  loss: 0.1776 (0.2605)  acc1: 100.0000 (95.2381)  acc5: 100.0000 (100.0000)  time: 1.4045  data: 1.3880  max mem: 174
+Epoch: [18]  [ 30/118]  eta: 0:02:02  lr: 0.001  img/s: 485.1570515601053  loss: 0.1833 (0.2461)  acc1: 100.0000 (95.1613)  acc5: 100.0000 (100.0000)  time: 1.3822  data: 1.3662  max mem: 174
+Epoch: [18]  [ 40/118]  eta: 0:01:47  lr: 0.001  img/s: 472.1653697319355  loss: 0.2015 (0.2506)  acc1: 100.0000 (94.8171)  acc5: 100.0000 (100.0000)  time: 1.3594  data: 1.3427  max mem: 174
+Epoch: [18]  [ 50/118]  eta: 0:01:33  lr: 0.001  img/s: 473.571456798487  loss: 0.1921 (0.2678)  acc1: 100.0000 (94.1176)  acc5: 100.0000 (99.7549)  time: 1.3662  data: 1.3493  max mem: 174
+Epoch: [18]  [ 60/118]  eta: 0:01:20  lr: 0.001  img/s: 490.36113871514584  loss: 0.1704 (0.2555)  acc1: 100.0000 (95.0820)  acc5: 100.0000 (99.7951)  time: 1.3755  data: 1.3593  max mem: 174
+Epoch: [18]  [ 70/118]  eta: 0:01:06  lr: 0.001  img/s: 391.1821583874465  loss: 0.1811 (0.2418)  acc1: 100.0000 (95.5986)  acc5: 100.0000 (99.8239)  time: 1.3699  data: 1.3530  max mem: 174
+Epoch: [18]  [ 80/118]  eta: 0:00:52  lr: 0.001  img/s: 511.5238806652743  loss: 0.1829 (0.2363)  acc1: 100.0000 (95.3704)  acc5: 100.0000 (99.8457)  time: 1.3655  data: 1.3483  max mem: 174
+Epoch: [18]  [ 90/118]  eta: 0:00:38  lr: 0.001  img/s: 452.826342780027  loss: 0.2491 (0.2365)  acc1: 100.0000 (95.7418)  acc5: 100.0000 (99.8626)  time: 1.3498  data: 1.3333  max mem: 174
+Epoch: [18]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 469.3715308863026  loss: 0.2022 (0.2316)  acc1: 100.0000 (95.7921)  acc5: 100.0000 (99.8762)  time: 1.3570  data: 1.3401  max mem: 174
+Epoch: [18]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 498.69111986326817  loss: 0.2022 (0.2292)  acc1: 100.0000 (95.6081)  acc5: 100.0000 (99.8874)  time: 1.3641  data: 1.3468  max mem: 174
+Epoch: [18] Total time: 0:02:41
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2393 (0.2393)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3654  data: 1.3510  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 89.787 Acc@5 100.000
+Epoch: [19]  [  0/118]  eta: 0:01:54  lr: 0.001  img/s: 443.1558566768361  loss: 0.0773 (0.0773)  acc1: 100.0000 (100.0000)  acc5: 100.0000 (100.0000)  time: 0.9670  data: 0.9489  max mem: 174
+Epoch: [19]  [ 10/118]  eta: 0:02:25  lr: 0.001  img/s: 514.0314659068279  loss: 0.1549 (0.2071)  acc1: 100.0000 (96.5909)  acc5: 100.0000 (100.0000)  time: 1.3483  data: 1.3319  max mem: 174
+Epoch: [19]  [ 20/118]  eta: 0:02:12  lr: 0.001  img/s: 500.12567817325464  loss: 0.1697 (0.2506)  acc1: 100.0000 (95.2381)  acc5: 100.0000 (100.0000)  time: 1.3748  data: 1.3586  max mem: 174
+Epoch: [19]  [ 30/118]  eta: 0:01:58  lr: 0.001  img/s: 514.4412725182062  loss: 0.1784 (0.2371)  acc1: 100.0000 (95.1613)  acc5: 100.0000 (100.0000)  time: 1.3421  data: 1.3259  max mem: 174
+Epoch: [19]  [ 40/118]  eta: 0:01:45  lr: 0.001  img/s: 500.2524338427134  loss: 0.1878 (0.2411)  acc1: 100.0000 (94.8171)  acc5: 100.0000 (100.0000)  time: 1.3385  data: 1.3221  max mem: 174
+Epoch: [19]  [ 50/118]  eta: 0:01:31  lr: 0.001  img/s: 404.2313030069391  loss: 0.1849 (0.2580)  acc1: 100.0000 (94.1176)  acc5: 100.0000 (100.0000)  time: 1.3546  data: 1.3382  max mem: 174
+Epoch: [19]  [ 60/118]  eta: 0:01:18  lr: 0.001  img/s: 485.4307828074592  loss: 0.1647 (0.2461)  acc1: 100.0000 (95.0820)  acc5: 100.0000 (100.0000)  time: 1.3630  data: 1.3472  max mem: 174
+Epoch: [19]  [ 70/118]  eta: 0:01:04  lr: 0.001  img/s: 510.1240859266917  loss: 0.1727 (0.2330)  acc1: 100.0000 (95.5986)  acc5: 100.0000 (100.0000)  time: 1.3661  data: 1.3500  max mem: 174
+Epoch: [19]  [ 80/118]  eta: 0:00:51  lr: 0.001  img/s: 496.5068880306595  loss: 0.1782 (0.2275)  acc1: 100.0000 (95.3704)  acc5: 100.0000 (100.0000)  time: 1.3315  data: 1.3150  max mem: 174
+Epoch: [19]  [ 90/118]  eta: 0:00:37  lr: 0.001  img/s: 469.2074448002461  loss: 0.2359 (0.2278)  acc1: 100.0000 (95.7418)  acc5: 100.0000 (100.0000)  time: 1.3308  data: 1.3145  max mem: 174
+Epoch: [19]  [100/118]  eta: 0:00:24  lr: 0.001  img/s: 473.77874419327054  loss: 0.1956 (0.2230)  acc1: 100.0000 (95.7921)  acc5: 100.0000 (100.0000)  time: 1.3298  data: 1.3136  max mem: 174
+Epoch: [19]  [110/118]  eta: 0:00:10  lr: 0.001  img/s: 484.4216149104191  loss: 0.1956 (0.2206)  acc1: 100.0000 (95.6081)  acc5: 100.0000 (100.0000)  time: 1.3445  data: 1.3282  max mem: 174
+Epoch: [19] Total time: 0:02:39
+Test:  [ 0/30]  eta: 0:00:40  loss: 0.2399 (0.2399)  acc1: 87.5000 (87.5000)  acc5: 100.0000 (100.0000)  time: 1.3656  data: 1.3516  max mem: 174
+Test: Total time: 0:00:40
+ * Acc@1 89.787 Acc@5 100.000
+All done
+root@31d5143ebe2c:/data/resnet-test#
